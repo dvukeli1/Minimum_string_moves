@@ -37,7 +37,7 @@ jar {
 	baseName = 'Minimum_string_moves'
     version =  '1.0.1'
     manifest {
-        attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
+         attributes 'Main-Class': 'views.Main','Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
     }
 }
 
