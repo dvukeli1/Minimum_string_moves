@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+
 public class MinMovesSearchControllerTest {
 	
 	/**
@@ -20,60 +21,70 @@ public class MinMovesSearchControllerTest {
 		assertEquals("It Must be = ", result0 , Minmoves.String_mover(s10, s20));
 		
 	}
-
-	/**
-	 * Greedy algorithm starts from first char and in one direction counts 5 swaps ( 3 is correct)  in both 
-	 * directions if direction of swap gives priority to right swap if char index is less then 
-	 * half of string length.
-	 */
-	
-	
-	String s11 = "aabaaaab";
-	String s21 = "baaaaaba";
-	int result1 = 3;
-	
-	
-	@Test
-	public void priorityDirectionCharSwapTest() {
-		MinMovesInterface Minmoves =  new MinMovesSearchController();
-		assertEquals("It Must be = ", result1 , Minmoves.String_mover(s11, s21));
-		
-	}
-	
-	/**
-	 *  Opposite from diferenceA_BStringMovesTest()
-	 */
-	
-	String s12 = "banana";
-	String s22 = "nanbaa";
-	int result2 = 4;
-	
-	@Test
-	public void oppositePriorityDirectionCharSwapTest() {
-		MinMovesInterface Minmoves =  new MinMovesSearchController();
-		assertEquals("It Must be = ", result2 , Minmoves.String_mover(s12, s22));
-		
-	}
 	
 	/**
 	 * Test greedy algorithm - shortest is better
 	 */
 	
-	String s13 = "aaaaaaaaab";
-	String s23 = "abaaaaaaaa";
-	int result3 = 2;
+	String s11 = "aaaaaaaaab";
+	String s21 = "abaaaaaaaa";
+	int result1 = 2;
 	
 
 	@Test
 	public void anotherSimpleGreedyAlgorithmTest() {
+		MinMovesInterface Minmoves =  new MinMovesSearchController();
+		assertEquals("It Must be = ", result1 , Minmoves.String_mover(s11, s21));
+		
+	}
+
+	/**
+	 * Problem:
+	 * Greedy algorithm starts from first char and counts 5 swaps ( 3 is correct)  in both 
+	 * directions if direction of swap gives priority to right swap if char index is less then 
+	 * half of string length.
+	 * Solved!
+	 */
+	
+	
+	String s12 = "aabaaaab";
+	String s22 = "baaaaaba";
+	int result2 = 3;
+	
+	
+	@Test
+	public void priorityDirectionCharSwapTest() {
+		MinMovesInterface Minmoves =  new MinMovesSearchController();
+		assertEquals("It Must be = ", result2 , Minmoves.String_mover(s12, s22));
+		
+		
+	}
+	
+	/**
+	 * Problem:
+	 *  Opposite from diferenceA_BStringMovesTest()
+	 *  Solved!
+	 */
+	
+	String s13 = "banana";
+	String s23 = "nanbaa";
+	int result3 = 4;
+	
+	@Test
+	public void oppositePriorityDirectionCharSwapTest() {
 		MinMovesInterface Minmoves =  new MinMovesSearchController();
 		assertEquals("It Must be = ", result3 , Minmoves.String_mover(s13, s23));
 		
 	}
 	
 	
+	
+	
 	/**
-	 * Test 
+	 * Problem:
+	 * Swap char c to last position when try to swap b to its position
+	 * 
+	 * Solved!
 	 * if (correctCharIndex.isEmpty()
 							|| !correctCharIndex.contains(swapIndex)) {
 						correctCharIndex.add(swapIndex);
